@@ -31,11 +31,28 @@ spaceship_building(13)
 # Modules are used to group functions, variables, and other things together into larger, more powerful programs.
 import time
 print(time.asctime())
-import sys
-print(sys.stdin.readline())
-def silly_age_joke(age):
-    if age >= 10 and age <= 13:
-        print('What is 13 + 49 + 84 + 155 + 97? A headache!')
-    else:
-        print('Huh?')
-silly_age_joke(9)
+# sys.stdin.readline() is outdated I think
+# import sys
+# print(sys.stdin.readline())
+# def silly_age_joke(age):
+#     print('How old are you?')
+#     age = int(sys.stdin.readline())
+#     if age >= 10 and age <= 13:
+#         print('What is 13 + 49 + 84 + 155 + 97? A headache!')
+#     else:
+#         print()
+# Basic Moon Weight function
+def moon_weight(weight, increase):
+    for year in range(1, 16):
+        weight = weight + increase
+        moon_weight = weight * 0.165
+        print('Year %s is %s' % (year, moon_weight))
+moon_weight(40, 0.5)
+# Moon weight function and years
+def moon_weight(weight, increase, years):
+    years = years + 1
+    for year in range(1, years):
+        weight = weight + increase
+        moon_weight = weight * 0.165
+        print('Year %s is %s' % (year, moon_weight))
+moon_weight(35, 0.3, 5)
